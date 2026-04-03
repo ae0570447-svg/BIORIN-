@@ -112,6 +112,8 @@
             width: 100%;
             margin-bottom: 15px;
         }
+        .contact-links { opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.3s ease, max-height 0.3s ease; }
+        .contact-links.show { opacity: 1; max-height: 200px; }
         .sidebar {
             width: 300px;
             background: rgba(255, 255, 255, 0.9);
@@ -199,9 +201,11 @@
             </div>
         </div>
         <div class="sidebar">
-            <h2>Contact Us</h2>
-            <a href="https://wa.me/201140278661" class="btn">WhatsApp</a>
-            <a href="mailto:alaawaleed2003.36@gmail.com" class="btn">Email</a>
+            <button class="btn contact-btn" onclick="toggleContact()">Contact</button>
+            <div class="contact-links" id="contact-links">
+                <a href="https://wa.me/201140278661" class="btn">WhatsApp</a>
+                <a href="mailto:alaawaleed2003.36@gmail.com" class="btn">Email</a>
+            </div>
             <div class="order-form">
                 <h3>Quick Order</h3>
                 <form action="mailto:alaawaleed2003.36@gmail.com" method="post" enctype="text/plain">
@@ -240,5 +244,11 @@
     <div class="footer">
         <p>&copy; 2026 BIORIN. All rights reserved.</p>
     </div>
+    <script>
+        function toggleContact() {
+            var el = document.getElementById('contact-links');
+            el.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>

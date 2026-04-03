@@ -92,6 +92,9 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
         }
+        .contact-section { text-align: center; margin-top: 20px; }
+        .contact-links { opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.3s ease, max-height 0.3s ease; }
+        .contact-links.show { opacity: 1; max-height: 200px; }
     </style>
 </head>
 <body>
@@ -107,17 +110,12 @@
                 <option value="">Select Product</option>
                 <option value="Body Splash">Body Splash</option>
                 <option value="Body Butter">Body Butter</option>
-                <option value="Fragrance Gel">Fragrance Gel</option>
-                <option value="Skin Serum">Skin Serum</option>
             </select>
 
             <label for="type">Type:</label>
             <select id="type" name="type" required>
                 <option value="">Select Type</option>
                 <option value="🌸 Blush Velvet | Double J’adore">🌸 Blush Velvet | Double J’adore</option>
-                <option value="🌹 Rose Berry | Double Burberry Her">🌹 Rose Berry | Double Burberry Her</option>
-                <option value="☕ Latte Plus | Double Bianco Latte">☕ Latte Plus | Double Bianco Latte</option>
-                <option value="🌸 Blush Velvet – دوب جادور">🌸 Blush Velvet – دوب جادور</option>
                 <option value="🍓 Rosé Berry – دوب بربري هير">🍓 Rosé Berry – دوب بربري هير</option>
                 <option value="☕ Latte Bliss – دوب بيانكو لاتيه">☕ Latte Bliss – دوب بيانكو لاتيه</option>
             </select>
@@ -133,7 +131,20 @@
 
             <button type="submit">Send Order</button>
         </form>
+        <div class="contact-section">
+            <button class="btn" onclick="toggleContact()">Contact</button>
+            <div class="contact-links" id="contact-links">
+                <a href="https://wa.me/201140278661" class="btn">WhatsApp</a>
+                <a href="mailto:alaawaleed2003.36@gmail.com" class="btn">Email</a>
+            </div>
+        </div>
     </div>
+    <script>
+        function toggleContact() {
+            var el = document.getElementById('contact-links');
+            el.classList.toggle('show');
+        }
+    </script>
 </body>
 </html></content>
 <parameter name="filePath">e:\ASKIM\order.html

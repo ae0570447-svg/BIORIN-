@@ -23,6 +23,8 @@
         .sidebar { width:300px; background:rgba(255,255,255,0.9); backdrop-filter:blur(15px); border-radius:25px; padding:25px; box-shadow:0 15px 35px rgba(0,0,0,0.1); border:1px solid rgba(255,255,255,0.3); position:sticky; top:20px; }
         .sidebar h2 { text-align:center; color:#d4a574; margin-bottom:20px; }
         .sidebar .btn { display:block; width:100%; margin-bottom:12px; }
+        .contact-links { opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.3s ease, max-height 0.3s ease; }
+        .contact-links.show { opacity: 1; max-height: 200px; }
         .footer { text-align:center; margin-top:30px; padding:20px; background:rgba(255,255,255,0.8); border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
     </style>
 </head>
@@ -58,14 +60,22 @@
             </div>
         </div>
         <aside class="sidebar">
-            <h2>Contact</h2>
-            <a href="https://wa.me/201140278661" class="btn">WhatsApp</a>
-            <a href="mailto:alaawaleed2003.36@gmail.com" class="btn">Email</a>
+            <button class="btn contact-btn" onclick="toggleContact()">Contact</button>
+            <div class="contact-links" id="contact-links">
+                <a href="https://wa.me/201140278661" class="btn">WhatsApp</a>
+                <a href="mailto:alaawaleed2003.36@gmail.com" class="btn">Email</a>
+            </div>
             <a href="index.html" class="btn">Back to Home</a>
         </aside>
     </div>
     <div class="footer">
         <p>&copy; 2026 BIORIN - Body Splash</p>
     </div>
+    <script>
+        function toggleContact() {
+            var el = document.getElementById('contact-links');
+            el.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
